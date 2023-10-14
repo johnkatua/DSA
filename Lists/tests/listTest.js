@@ -86,4 +86,21 @@ describe('LinkedList', () => {
     }
     assert.deepEqual(expectedArray, actualArray);
   });
+
+  it("should remove a node at the front of the list", () => {
+    const list = new LinkedList();
+    list.addFront(1);
+    list.addFront(2);
+    list.addFront(3);
+    list.removeFront();
+
+    let expectedArray = [2, 1];
+    let actualArray = [];
+    let current = list._head;
+    while (current) {
+      actualArray.push(current.data);
+      current = current.next;
+    }
+    assert.deepEqual(expectedArray, actualArray);
+  });
 });

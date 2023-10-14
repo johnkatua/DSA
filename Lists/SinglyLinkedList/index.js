@@ -51,6 +51,14 @@ class LinkedList {
     previous.next = newNode;
   }
 
+  // remove a node at the front of the list
+  removeFront() {
+    if (!this._head) {
+      return;
+    }
+    this._head = this._head.next;
+  }
+
 
   printList() {
     let list = []
