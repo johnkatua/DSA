@@ -17,13 +17,26 @@ class LinkedList {
     this._head = newNode;
   }
 
-  printList() {
+  // add a node at the end of the list
+  addEnd(data) {
+    const newNode = new Node(data);
+    if (!this._head) {
+      this._head = newNode;
+      return;
+    }
     let current = this._head;
-    console.log(current.data)
-    while (current) {
-      console.log(current.data);
+    while (current.next) {
       current = current.next;
-      console.log(current)
+    }
+    current.next = newNode;
+  }
+
+  printList() {
+    let list = []
+    let current = this._head;
+    while (current) {
+      list.push(current.data);
+      current = current.next;
     }
   }
 }

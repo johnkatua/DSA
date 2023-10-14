@@ -53,4 +53,20 @@ describe('LinkedList', () => {
     }
     assert.deepEqual(expectedArray, actualArray);
   });
+
+  it("should add a node at the end of the list", () => {
+    const list = new LinkedList();
+    list.addEnd(1);
+    list.addEnd(2);
+    list.addEnd(3);
+
+    let expectedArray = [1, 2, 3];
+    let actualArray = [];
+    let current = list._head;
+    while (current) {
+      actualArray.push(current.data);
+      current = current.next;
+    }
+    assert.deepEqual(expectedArray, actualArray);
+  });
 });
