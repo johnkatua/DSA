@@ -69,4 +69,21 @@ describe('LinkedList', () => {
     }
     assert.deepEqual(expectedArray, actualArray);
   });
+
+  it("should add a node at a specific index", () => {
+    const list = new LinkedList();
+    list.addFront(1);
+    list.addFront(2);
+    list.addFront(3);
+    list.addAtIndex(1, 4); //[1 -> index, 4 -> newNode]
+
+    let expectedArray = [3, 4, 2, 1];
+    let actualArray = [];
+    let current = list._head;
+    while (current) {
+      actualArray.push(current.data);
+      current = current.next;
+    }
+    assert.deepEqual(expectedArray, actualArray);
+  });
 });

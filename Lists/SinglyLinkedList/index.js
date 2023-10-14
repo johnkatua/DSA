@@ -31,6 +31,27 @@ class LinkedList {
     current.next = newNode;
   }
 
+  // add a node at a specific index
+  addAtIndex(index, data) {
+    const newNode = new Node(data);
+    if (index === 0) {
+      // if the list is empty, add the node as the first node
+      addFirst(data);
+      return;
+    }
+    let current = this._head;
+    let previous = null;
+    let count = 0;
+    while (count < index) {
+      previous = current;
+      current = current.next;
+      count++;
+    }
+    newNode.next = current;
+    previous.next = newNode;
+  }
+
+
   printList() {
     let list = []
     let current = this._head;
