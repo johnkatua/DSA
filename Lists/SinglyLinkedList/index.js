@@ -59,6 +59,36 @@ class LinkedList {
     this._head = this._head.next;
   }
 
+  // remove a node at the end of the list
+  removeEnd() {
+    if (!this._head) {
+      return;
+    }
+    let current = this._head;
+    let previous = null;
+    while (current.next) {
+      previous = current;
+      current = current.next;
+    }
+    previous.next = null;
+  }
+
+  // remove a node at a specific index
+  removeAtIndex(index) {
+    if (!this._head) {
+      return;
+    }
+    let current = this._head;
+    let previous = null;
+    let count = 0;
+    while (count < index) {
+      previous = current;
+      current = current.next;
+      count++;
+    }
+    previous.next = current.next;
+  }
+
 
   printList() {
     let list = []

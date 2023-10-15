@@ -103,4 +103,38 @@ describe('LinkedList', () => {
     }
     assert.deepEqual(expectedArray, actualArray);
   });
+
+  it("should remove a node at the end of the list", () => {
+    const list = new LinkedList();
+    list.addFront(1);
+    list.addFront(2);
+    list.addFront(3);
+    list.removeEnd();
+
+    let expectedArray = [3, 2];
+    let actualArray = [];
+    let current = list._head;
+    while (current) {
+      actualArray.push(current.data);
+      current = current.next;
+    }
+    assert.deepEqual(expectedArray, actualArray);
+  });
+
+  it("should remove a node at a specific index", () => {
+    const list = new LinkedList();
+    list.addFront(1);
+    list.addFront(2);
+    list.addFront(3);
+    list.removeAtIndex(1);
+
+    let expectedArray = [3, 1];
+    let actualArray = [];
+    let current = list._head;
+    while (current) {
+      actualArray.push(current.data);
+      current = current.next;
+    }
+    assert.deepEqual(expectedArray, actualArray);
+  });
 });
