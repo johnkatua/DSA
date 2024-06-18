@@ -25,11 +25,3 @@ const containsDuplicate = nums => {
   const newArr = [...new Set(nums)]
   return nums.length !== newArr.length
 }
-
-let input1 = [1,2,3,4]
-let output1 = containsDuplicate(input1)
-console.log(output1); // false
-
-let input2 = [1,2,3,1]
-let output2 = containsDuplicate(input2)
-console.log(output2); // true
